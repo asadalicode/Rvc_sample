@@ -1,0 +1,24 @@
+:root {
+  --white: #fff;
+  --cool-grey: #8f95a3;
+  --offWhite: #f7f7f7;
+  --black: #000000;
+  --lightBlue: #009aeb;
+  --offBlack: rgba(33, 33, 33, 0.72) !important;
+  --successColor: rgb(34, 237, 166);
+  --borderColor: rgba(255, 255, 255, 0.18);
+}
+
+body {
+  margin: 0px;
+  color: white !important;
+  min-height: 100vh !important;
+  background: var(--offWhite) !important;
+  width: 100%;
+  font-family: "Libre Franklin", sans-serif !important;
+  overflow-x: hidden !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
