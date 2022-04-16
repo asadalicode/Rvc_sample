@@ -5,7 +5,7 @@ import Footer from './modules/shared/components/footer/footer';
 import { useState } from 'react';
 import SideNavbar from './modules/shared/components/sideNavbar/sideNavbar';
 import { Style } from '@mui/icons-material';
-import Staking from './modules/home/components/dashboard/dashboard';
+import Dashboard from './modules/home/components/dashboard/dashboard';
 
 function App() {
   const [isMobileNavbarOpen, setIsMobileNavbarOpen] = useState(false);
@@ -25,7 +25,7 @@ function App() {
             <div className="d-flex">
             
               <div className="ms-3 container-fluid">
-             <Staking/>
+             <Dashboard/>
               </div>
             </div>
           </div>

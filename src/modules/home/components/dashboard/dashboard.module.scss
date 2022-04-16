@@ -1,88 +1,82 @@
 @import "../../../../theme/mixings.scss";
 
 .container {
-  .title {
-    margin: 0px;
-    margin-bottom: 1rem;
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--black);
-    line-height: 48px;
+  @include for-size(phone-only) {
+    flex-direction: column !important;
+    padding: 0;
   }
 
-  .description {
-    margin: 0px 0px 2rem;
-    font-size: 14px;
-    line-height: 20px;
-    color: var(--black);
-  }
+  .leftContainer {
+    @include for-size(phone-only) {
+      width: 100%;
 
-  .flexBox {
-    width: 100%;
-    gap: 2rem;
-
-    .form {
-      width: 70%;
-      height: 200px;
-      background: rgba(255, 255, 255, 0.04);
-      box-sizing: border-box;
-      border: 1px solid var(--borderColor);
-      border-radius: 0.5rem;
-
-      .btnContainer {
-        .selectedBtn {
-          color: var(--white) !important;
-          background: rgba(255, 255, 255, 0.08) !important;
-        }
-
-        .btn {
-          flex: 1;
-          background: rgba(255, 255, 255, 0.04);
-          text-transform: none;
-          color: rgba(255, 255, 255, 0.52);
-          font-size: 16px;
-          opacity: 1;
-          border: none;
-          height: 3rem;
-          transition: color 350ms ease 0s;
-          position: relative;
-          border-bottom: 1px solid rgba(255, 255, 255, 0.11);
-        }
+      img {
+        width: 100%;
+        margin-left: -12px;
       }
     }
 
-    .overview {
-      width: 30%;
-      height: 200px;
-      background-color: black;
-    }
+  }
+
+  .rightContainer {
+    margin-left: 4rem;
 
     @include for-size(phone-only) {
-      flex-direction: column;
+      margin-left: 0 !important;
 
-      .form {
-        order: 2;
-        width: 100%;
-      }
-
-      .overview {
-        order: 1;
-        width: 100%;
+      .title {
+        font-size: 2rem !important;
+        margin-top: 1rem !important;
       }
     }
 
-    @include for-size(tablet-portrait-up) {
-      flex-direction: column;
+    .title {
+      font-size: 36px;
+      font-weight: bold;
+      line-height: 1.19;
+      margin-bottom: 1rem;
+    }
 
-      .form {
-        order: 2;
-        width: 100%;
+    .description {
+      font-size: 23px;
+      line-height: 1.22;
+    }
+
+    .label {
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--cool-grey);
+    }
+
+    .productListContainer {
+      margin-top: 3rem;
+      border-top: solid 1px #e5e5e6;
+      border-bottom: solid 1px #e5e5e6;
+      padding: 13.5px 0;
+      // opacity: 0.1;
+      gap: 40.8px;
+
+      .label {
+        color: #3a4649;
+        margin-left: 9.8px;
+        font-size: 1rem;
+        font-weight: 500;
       }
+    }
 
-      .overview {
-        order: 1;
-        width: 100%;
+    .buttonContainer {
+      gap: 0.5rem;
+      margin-top: 3.1rem;
+
+      button {
+        height: 32px;
+        border-radius: 6px;
+        background-color: var(--cool-grey);
+        font-size: 15px;
+        color: var(--white);
+        border: none;
       }
     }
   }
+
 }

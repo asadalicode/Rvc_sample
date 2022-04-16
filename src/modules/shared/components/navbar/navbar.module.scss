@@ -11,33 +11,17 @@
   justify-content: center;
   z-index: 2;
 
-  .connectWallet {
-    border-radius: 6px;
-    box-shadow: none;
-    text-transform: none;
-    background: rgb(255, 255, 255);
-    font-family: Inter, sans-serif;
-    font-size: 12px;
+  .logoTitle{
+    color: var(--black);
     font-weight: 600;
-    display: flex;
-    align-items: center;
-    padding: 8px 12px;
-    height: 32px;
-    color: var(--offBlack) !important;
-    margin-left: 12px;
-
-    @include for-size(phone-only) {
-      margin-top: 0 !important;
-    }
-
-    @include for-size(tablet-portrait-up) {
-      margin-top: 0 !important;
-    }
+    margin-left: 10px;
+    font-size: 1.2rem;
   }
 
+  .selectedNavItem{
+    color: #009aeb !important;
+  }
   .navItem {
-    font-family: Inter, sans-serif;
-    transition: color 350ms ease 0s;
     font-size: 14px;
     font-weight: 700;
     line-height: 34px;
@@ -56,24 +40,16 @@
   top: 0;
   height: 100vh;
   width: 100%;
-  background-color: rgb(29, 35, 67);
+  background-color: var(---offWhite);
 
   .container {
     padding: 24px;
-
-    .title {
-      margin: 0px 0px 1rem 1.2rem;
-      font-size: 1rem;
-      font-weight: 600;
-      line-height: 24px;
-      color: var(--white);
-    }
 
     .item {
       display: block;
       padding: 9px 16px;
       margin-bottom: 8px;
-      color: var(--offWhite);
+      color: var(--black);
       font-size: 16px;
       font-weight: 400;
       text-decoration: none;

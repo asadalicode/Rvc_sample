@@ -3,36 +3,18 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
 import Style from './navbar.module.scss';
 import logo from '../../../../assets/images/audio-headphones.svg';
-import { ReactComponent as Wallet } from '../../../../assets/images/audio-headphones.svg';
-import { ReactComponent as MenuIcon } from '../../../../assets/images/audio-headphones.svg';
-import { ReactComponent as CrossIcon } from '../../../../assets/images/audio-headphones.svg';
-import { ReactComponent as DashboardIcon } from '../../../../assets/images/audio-headphones.svg';
-import { ReactComponent as TradeIcon } from '../../../../assets/images/audio-headphones.svg';
-import { ReactComponent as StakingIcon } from '../../../../assets/images/audio-headphones.svg';
-import { ReactComponent as Liquiditycon } from '../../../../assets/images/audio-headphones.svg';
-import { ReactComponent as VestingIcon } from '../../../../assets/images/audio-headphones.svg';
-import { ReactComponent as LeaderboardIcon } from '../../../../assets/images/audio-headphones.svg';
-import { ReactComponent as MarketplaceIcon } from '../../../../assets/images/audio-headphones.svg';
-import { ReactComponent as LaunchpadIcon } from '../../../../assets/images/audio-headphones.svg';
+import { ReactComponent as MenuIcon } from '../../../../assets/images/menu.svg';
+import { ReactComponent as CrossIcon } from '../../../../assets/images/cross.svg';
 
-const pages = ['Discover', 'Search', 'Try Instaread', 'Login'];
-const sideBarPages = [
-    { Icon: DashboardIcon, title: 'Discover' },
-    { Icon: TradeIcon, title: 'Search' },
-    { Icon: StakingIcon, title: 'Try Instaread' },
-    { Icon: Liquiditycon, title: 'Login' },
+const pages = [
+    { title: 'Discover', isSelected: false },
+    { title: 'Search', isSelected: false },
+    { title: 'Try Instaread', isSelected: true },
+    { title: 'Login', isSelected: false },
 ]
-
-
 
 
 const Navbar = ({ handleMobileNavbar }: any) => {
@@ -49,27 +31,24 @@ const Navbar = ({ handleMobileNavbar }: any) => {
             <AppBar position="static" className={Style.barContainer}>
                 <div className='container'>
                     <Toolbar className='mx-5' disableGutters>
-
                         <Box sx={{ flexGrow: 1 }}>
                             <img src={logo} />
+                            <span className={`mt-2 ${Style.logoTitle}`}>Instaread</span>
                         </Box>
                         <Box sx={{ display: 'flex' }}>
                             <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                                {pages.map((page) => (
+                                {pages.map((page,index) => (
                                     <Button
-                                        key={page}
-                                        onClick={handleOpenNavMenu}
-                                        sx={{ my: 2, color: 'white', display: 'block' }}
-                                        className={Style.navItem}
+                                        key={index}
+                                        // onClick={handleOpenNavMenu}
+                                        // sx={{ my: 2, color: 'white', display: 'block' }}
+                                        className={`${Style.navItem} ${page.isSelected ? Style.selectedNavItem : ''}`}
                                     >
-                                        {page}
+                                        {page.title}
                                     </Button>
                                 ))}
 
                             </Box>
-
-                        
-
 
                         </Box>
                         <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
@@ -83,8 +62,8 @@ const Navbar = ({ handleMobileNavbar }: any) => {
                             >
                                 {
                                     isMenueOpen ?
-                                        <CrossIcon fill={"white"} /> :
-                                        <MenuIcon />
+                                        <CrossIcon fill={"black"} /> :
+                                        <MenuIcon  fill={"black"}/>
                                 }
 
                             </IconButton>
@@ -98,18 +77,17 @@ const Navbar = ({ handleMobileNavbar }: any) => {
                     <div className={Style.container}>
                         <div>
 
-                            <h6 className={Style.title}>LUART Application</h6>
-                            {sideBarPages.map((item) => {
+                            {pages.map((item) => {
                                 return (
                                     <div>
                                         <a className={`d-flex align-items-center ${Style.item}`}>
-                                           <item.Icon height={20}/> <span className='ms-2'>{item.title}</span>
+                                            <span className='ms-2'>{item.title}</span>
                                         </a>
                                     </div>
                                 )
                             })}
                         </div>
-                 
+
                     </div>
                 </div>
             }
